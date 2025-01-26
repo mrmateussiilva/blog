@@ -1,0 +1,5 @@
+baseURL = 'https://example.org/'
+languageCode = 'pt-br'
+title = 'O Código e o Bug'
+author = 'mateussiilva'
+theme = 'hugo-bearblog'

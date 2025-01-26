@@ -1,0 +1,6 @@
+[submodule "terminal-hugo-theme"]
+	path = terminal-hugo-theme
+	url = https://github.com/techbarrack/terminal-hugo-theme
+[submodule "themes/hugo-bearblog"]
+	path = themes/hugo-bearblog
+	url = https://github.com/janraasch/hugo-bearblog.git
