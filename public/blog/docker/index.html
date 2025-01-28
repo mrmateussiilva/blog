@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker | O Código e o Bug</title>
+<meta name="title" content="Docker" />
+<meta name="description" content="Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira&hellip; É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:1313/blog/docker/">
+  <meta property="og:site_name" content="O Código e o Bug">
+  <meta property="og:title" content="Docker">
+  <meta property="og:description" content="Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira… É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu.">
+  <meta property="og:locale" content="pt_br">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-01-28T01:12:13-03:00">
+    <meta property="article:modified_time" content="2025-01-28T01:12:13-03:00">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Docker">
+  <meta name="twitter:description" content="Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira… É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu.">
+
+
+
+
+  <meta itemprop="name" content="Docker">
+  <meta itemprop="description" content="Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira… É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu.">
+  <meta itemprop="datePublished" content="2025-01-28T01:12:13-03:00">
+  <meta itemprop="dateModified" content="2025-01-28T01:12:13-03:00">
+  <meta itemprop="wordCount" content="331">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+      --width: 800px;
+      --font-main: Verdana, sans-serif;
+      --font-secondary: Verdana, sans-serif;
+      --font-scale: 1em;
+      --background-color: #fff;
+      --heading-color: #222;
+      --text-color: #444;
+      --link-color: #3273dc;
+      --visited-color:  #8b6fcb;
+      --code-background-color: #f2f2f2;
+      --code-color: #222;
+      --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+      :root {
+          --background-color: #333;
+          --heading-color: #eee;
+          --text-color: #ddd;
+          --link-color: #8cc2dd;
+          --visited-color:  #8b6fcb;
+          --code-background-color: #777;
+          --code-color: #ddd;
+          --blockquote-color: #ccc;
+      }
+  }
+
+  body {
+      font-family: var(--font-secondary);
+      font-size: var(--font-scale);
+      margin: auto;
+      padding: 20px;
+      max-width: var(--width);
+      text-align: left;
+      background-color: var(--background-color);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      line-height: 1.5;
+      color: var(--text-color);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-main);
+      color: var(--heading-color);
+  }
+
+  a {
+      color: var(--link-color);
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  a:hover {
+      text-decoration: underline; 
+  }
+
+  nav a {
+      margin-right: 8px;
+  }
+
+  strong, b {
+      color: var(--heading-color);
+  }
+
+  button {
+      margin: 0;
+      cursor: pointer;
+  }
+
+  main {
+      line-height: 1.6;
+  }
+
+  table {
+      width: 100%;
+  }
+
+  hr {
+      border: 0;
+      border-top: 1px dashed;
+  }
+
+  img {
+      max-width: 100%;
+  }
+
+  code {
+      font-family: monospace;
+      padding: 2px;
+      background-color: var(--code-background-color);
+      color: var(--code-color);
+      border-radius: 3px;
+  }
+
+  blockquote {
+      border-left: 1px solid #999;
+      color: var(--code-color);
+      padding-left: 20px;
+      font-style: italic;
+  }
+
+  footer {
+      padding: 25px 0;
+      text-align: center;
+  }
+
+  .title:hover {
+      text-decoration: none;
+  }
+
+  .title h1 {
+      font-size: 1.5em;
+  }
+
+  .inline {
+      width: auto !important;
+  }
+
+  .highlight, .code {
+      padding: 1px 15px;
+      background-color: var(--code-background-color);
+      color: var(--code-color);
+      border-radius: 3px;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+      list-style-type: none;
+      padding: unset;
+  }
+
+  ul.blog-posts li {
+      display: flex;
+  }
+
+  ul.blog-posts li span {
+      flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+      color: var(--visited-color);
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>O Código e o Bug</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Docker</h1>
+<p>
+  <i>
+    <time datetime='2025-01-28'>
+      28 Jan, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira&hellip; É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu.</p>
+<h2 id="o-papel-do-docker">O papel do Docker</h2>
+<p>É aí que entra o Docker. Ele é tipo uma máquina do tempo portátil, que cria um ambiente isolado e bonitinho onde a sua aplicação roda exatamente do jeito que você configurou, independente do sistema operacional ou das dependências do computador onde ela tá rodando.</p>
+<h2 id="em-termos-simples">Em termos simples:</h2>
+<ul>
+<li>Docker pega sua aplicação e tudo o que ela precisa (tipo sistema operacional, bibliotecas, configurações) e coloca isso dentro de um container.</li>
+<li>Um container é como uma caixinha mágica que garante que tudo vai funcionar igualzinho em qualquer lugar.</li>
+</ul>
+<p>E sabe o melhor? Não precisa ficar instalando tudo manualmente. Com o Docker, você escreve um arquivo chamado Dockerfile, onde você diz:</p>
+<blockquote>
+<p>&ldquo;Olha, meu app precisa do Python 3.10, um PostgreSQL e da biblioteca X&rdquo;.</p>
+</blockquote>
+<p>O Docker pega isso e cria o container pra você.</p>
+<h2 id="por-que-isso-é-incrível">Por que isso é incrível?</h2>
+<p>Sem desculpa de &rsquo;na minha máquina funciona&rsquo;: Agora funciona em qualquer lugar, ponto.
+Testes mais fáceis: Quer rodar seu app com um banco diferente ou uma versão nova do Node? Só muda o container.</p>
+<p>Desenvolvimento mais rápido: Você não perde tempo configurando ambientes.
+Quer um exemplo do que é o Docker no mundo real? Ele é tipo o Netflix da programação. Antes, você tinha que ir na locadora pegar o filme (configurar tudo na mão), mas agora o Docker te entrega o filme pronto pra assistir (um ambiente completo, isolado e funcional).</p>
+<h2 id="resumindo">Resumindo:</h2>
+<p>O Docker é o salvador da pátria pra devs, porque deixa seu trabalho organizado, previsível e portátil.</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
