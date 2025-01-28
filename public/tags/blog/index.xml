@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on O Código e o Bug</title>
+    <link>https://example.org/blog/</link>
+    <description>Recent content in Blogs on O Código e o Bug</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 28 Jan 2025 01:12:13 -0300</lastBuildDate>
+    <atom:link href="https://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://example.org/blog/docker/</link>
+      <pubDate>Tue, 28 Jan 2025 01:12:13 -0300</pubDate>
+      <guid>https://example.org/blog/docker/</guid>
+      <description>Docker é magia de bruxo pra quem tá começando, mas calma que não é um bicho de sete cabeças. Imagina que você tá desenvolvendo uma aplicação e, pra rodar ela direitinho, precisa instalar várias coisas: uma versão específica do Python, um banco de dados, uma biblioteca que só funciona em Marte numa terça-feira&amp;hellip; É um caos, né? E se você tentar rodar isso no computador de outra pessoa, provavelmente vai dar erro, porque o ambiente dela é diferente do seu.</description>
+    </item>
+  </channel>
+</rss>
