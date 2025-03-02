@@ -1,0 +1,5 @@
+baseURL = 'https://mrmateussiilva.github.io/'
+languageCode = 'pt-br'
+title = 'O Código e o Bug'
+theme = 'hugo-bearblog'
+author = 'mrmateussiilva'
