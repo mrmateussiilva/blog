@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Código e o Bug</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-white text-black font-serif">
     <header class="max-w-4xl mx-auto py-12 text-center">
         <h1 class="text-5xl font-bold">O Código e o Bug</h1>
         <p class="text-lg text-gray-600 mt-4">Reflexões sobre tecnologia, programação e bugs inevitáveis.</p>
     </header>
     <main class="max-w-3xl mx-auto px-6">
-        <section class="space-y-12">
-            <article class="border-b pb-8">
-                <h2 class="text-3xl font-bold mb-2">Título do Post</h2>
-                <p class="text-gray-700">Este é um exemplo de post no blog "O Código e o Bug". Uma reflexão sobre tecnologia e desenvolvimento de software.</p>
-                <a href="#" class="text-green-600 font-bold hover:underline mt-4 inline-block">Leia mais...</a>
-            </article>
-            <article class="border-b pb-8">
-                <h2 class="text-3xl font-bold mb-2">Outro Post Interessante</h2>
-                <p class="text-gray-700">Mais uma análise sobre os desafios e curiosidades do mundo da programação.</p>
-                <a href="#" class="text-green-600 font-bold hover:underline mt-4 inline-block">Leia mais...</a>
-            </article>
+        <section class="space-y-12" id="container-posts">
+
         </section>
     </main>
     <footer class="max-w-3xl mx-auto text-center py-12 text-gray-500 text-sm">
         <p>&copy; 2025 O Código e o Bug. Todos os direitos reservados.</p>
     </footer>
 </body>
-</html>
+<script>
+    const posts = [
+        
+        {
+            title: "Engenheiro de Prompt? Você só sabe digitar no ChatGPT, para!",
+            path: "/posts/engenheiro-de-prompt.html",
+            resume: "Nos últimos tempos, apareceu uma nova 'profissão' no mercado: Engenheiro de Prompt. Sério? Isso é o equivalente a chamar um cara que sabe procurar no Google de 'Especialista em Search'"
+        },
+        {
+            title: "Hello World",
+            path: "/posts/hello.html",
+            resume: "Esse é o primeiro post do blog... o famoso hello world"
+        },
 
+    ];
+
+
+    const containerPosts = document.querySelector("#container-posts");
+    posts.forEach(post => {
+        let p = `
+        <article class="border-b pb-8">
+                <h2 class="text-3xl font-bold mb-2">${post.title}</h2>
+                <p id="resume" class="text-gray-700">${post.resume}.</p>
+                <a href="${post.path}" class="text-green-600 font-bold hover:underline mt-4 inline-block">Leia mais...</a>
+            </article>
+        `
+        containerPosts.innerHTML += p
+    })
+
+
+</script>
+
+</html>
