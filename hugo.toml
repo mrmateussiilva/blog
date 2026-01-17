@@ -1,0 +1,32 @@
+baseURL = 'https://exemplo.com/'
+languageCode = 'pt-br'
+title = 'Blog Minimalista'
+theme = [] # Usando layouts locais
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Sobre'
+    pageRef = '/sobre'
+    weight = 20
+  [[menus.main]]
+    name = 'Contato'
+    pageRef = '/contato'
+    weight = 30
+
+[params]
+  description = "Um blog sobre tecnologia e simplicidade."
+  author = "Seu Nome"
+  dateFormat = "02 Jan 2006"
+
+# URLs amigáveis
+[permalinks]
+  posts = '/:year/:month/:slug/'
+
+[markup]
+  [markup.highlight]
+    style = 'tango'
+    noClasses = false
