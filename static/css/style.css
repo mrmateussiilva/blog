@@ -8,39 +8,40 @@
 }
 
 :root {
-  /* Ultra-refined Palette */
-  --bg-color: #fafafa;
-  /* Soft off-white */
-  --card-bg: #ffffff;
-  --text-primary: #1a1a1a;
+  /* Flat & Elegant Palette */
+  --bg-color: #ffffff;
+  --text-primary: #111111;
   --text-secondary: #555555;
-  --text-tertiary: #999999;
-  --accent-color: #111111;
-  /* Monochrome accent */
-  --accent-hover: #444444;
-  --border-subtle: #eeeeee;
+  --text-tertiary: #888888;
+
+  /* Deep Blue Accent - Classic, Trustworthy, Elegant */
+  --accent-color: #2c45ff;
+  /* Vibrant Royal Blue */
+
+  --border-color: #e5e5e5;
+  --card-hover: #f8f9fa;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Lora', Georgia, serif;
 
   /* Spacing */
-  --spacing-unit: 1rem;
-  --container-width: 720px;
-  /* Tighter width for better reading */
-  --header-height: 80px;
+  --container-width: 760px;
+  /* Slightly wider for modern feel */
+  --header-height: 90px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #111111;
-    --card-bg: #111111;
-    --text-primary: #ededed;
-    --text-secondary: #a0a0a0;
+    --bg-color: #0b0b0b;
+    /* Very dark grey, softer than black */
+    --text-primary: #f1f1f1;
+    --text-secondary: #a8a8a8;
     --text-tertiary: #666666;
-    --accent-color: #ffffff;
-    --accent-hover: #cccccc;
-    --border-subtle: #222222;
+    --accent-color: #5c7aff;
+    /* Lighter blue for dark mode */
+    --border-color: #222222;
+    --card-hover: #161616;
   }
 }
 
@@ -49,38 +50,36 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography Scale */
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   font-family: var(--font-sans);
+  font-weight: 700;
+  /* Bolder headers for flat design */
   color: var(--text-primary);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.75rem;
-  margin-top: 2.5rem;
+  font-size: 1.8rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -92,12 +91,22 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s;
 }
 
 a:hover {
   color: var(--accent-color);
+}
+
+/* Link Styling within text for Flat Style */
+.post-content p a {
+  color: var(--accent-color);
+  font-weight: 500;
+  border-bottom: 2px solid rgba(44, 69, 255, 0.2);
+  /* Subtle underline */
+}
+
+.post-content p a:hover {
   border-bottom-color: var(--accent-color);
 }
 
@@ -108,13 +117,14 @@ a:hover {
   padding: 0 1.5rem;
 }
 
-/* Header */
+/* Header - Clean & Sharp */
 header {
   height: var(--header-height);
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
-  /* Removed border for cleaner look, relying on whitespace */
+  border-bottom: 1px solid transparent;
+  /* Keep it open */
+  margin-bottom: 4rem;
 }
 
 header .container {
@@ -125,10 +135,10 @@ header .container {
 }
 
 .site-title {
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
   color: var(--text-primary);
-  letter-spacing: -0.03em;
 }
 
 nav {
@@ -138,160 +148,143 @@ nav {
 
 nav a {
   font-size: 0.95rem;
-  color: var(--text-secondary);
   font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
 }
 
-nav a:hover,
 nav a.active {
   color: var(--text-primary);
-  border-bottom: none;
-  /* Clean nav */
 }
 
-/* Post List (Home/Index) */
+nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  /* Flat indicator */
+}
+
+/* Post List (Index) */
 .post-list {
   list-style: none;
 }
 
 .post-item {
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-  transition: opacity 0.2s ease;
+  display: block;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  /* Structured list */
+  transition: background-color 0.2s;
+}
+
+.post-item:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.post-item:hover {
+  /* Subtle interaction */
+  padding-left: 0.5rem;
+  /* Movement */
+  border-bottom-color: var(--accent-color);
 }
 
 .post-meta {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .post-title {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
-  font-weight: 600;
-}
-
-.post-title a {
-  border: none;
 }
 
 .post-summary {
   color: var(--text-secondary);
   font-size: 1.05rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  max-width: 90%;
 }
 
 /* Single Post */
 .post-header {
-  margin-bottom: 3rem;
-  text-align: left;
-  /* Keep left aligned for minimalism */
+  margin-bottom: 3.5rem;
 }
 
 .post-header .post-title {
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.post-header .post-meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .post-content {
   font-family: var(--font-serif);
-  /* Serif for long form reading */
-  font-size: 1.125rem;
-  /* 18px */
-}
-
-.post-content p {
-  color: var(--text-secondary);
-  margin-bottom: 1.75rem;
-}
-
-.post-content strong {
+  font-size: 1.15rem;
+  /* Larger comfortable type */
   color: var(--text-primary);
-  font-weight: 600;
 }
 
 .post-content blockquote {
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
-  border-left: 2px solid var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+  /* Bold flat accent */
   padding-left: 1.5rem;
-  margin: 2rem 0;
-}
-
-.post-content code {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 0.9em;
-  background-color: var(--border-subtle);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
+  margin: 2.5rem 0;
+  background: transparent;
 }
 
 .post-content pre {
-  background-color: var(--bg-color);
-  /* Match bg or slightly different */
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow-x: auto;
-  margin: 2rem 0;
+  font-size: 0.9rem;
 }
 
+/* Tags as Flat Badges */
 .tags {
   margin-top: 4rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.tag {
+.tags .tag {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+  padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
-  color: var(--text-tertiary);
-  background: transparent;
-  padding: 0;
-  border: 1px solid var(--border-subtle);
-  padding: 0.3rem 0.8rem;
-  border-radius: 50px;
-  /* Pill shape */
-  transition: all 0.2s;
+  border-radius: 4px;
+  /* Slightly rounded, not full pill */
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
-.tag:hover {
-  border-color: var(--text-secondary);
-  color: var(--text-primary);
-  border-bottom-width: 1px;
-  /* Override global link style */
+.tags .tag:hover {
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
 }
 
 /* Footer */
 footer {
   margin-top: 6rem;
-  padding: 3rem 0;
-  border-top: 1px solid var(--border-subtle);
-  text-align: left;
-  /* Align with content */
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
   color: var(--text-tertiary);
   font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-footer a {
-  color: var(--text-secondary);
-}
-
-/* Utilities */
-.intro {
-  margin-bottom: 4rem;
-  font-size: 1.4rem;
-  color: var(--text-secondary);
-  font-weight: 300;
-  line-height: 1.5;
-  max-width: 90%;
 }
