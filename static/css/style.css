@@ -15,7 +15,7 @@
   --text-tertiary: #888888;
 
   /* Deep Blue Accent */
-  --accent-color: #2c45ff;
+  --accent-color: #0F52BA;
 
   --border-color: #e5e5e5;
   --card-hover: #f8f9fa;
@@ -37,7 +37,7 @@
     --text-primary: #f1f1f1;
     --text-secondary: #a8a8a8;
     --text-tertiary: #666666;
-    --accent-color: #5c7aff;
+    --accent-color: #4facfe;
     --border-color: #222222;
     --card-hover: #161616;
     --code-bg: #111;
@@ -381,4 +381,15 @@ footer {
   border-top: 1px solid var(--border-color);
   color: var(--text-tertiary);
   font-size: 0.9rem;
+}
+/* Safira Icon Styling */
+.safira-icon {
+  color: var(--accent-color);
+  margin-right: 8px;
+  vertical-align: text-bottom;
+  transition: transform 0.3s ease;
+}
+
+.site-title:hover .safira-icon {
+  transform: rotate(15deg) scale(1.1);
 }
