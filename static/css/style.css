@@ -14,12 +14,13 @@
   --text-secondary: #555555;
   --text-tertiary: #888888;
 
-  /* Deep Blue Accent - Classic, Trustworthy, Elegant */
+  /* Deep Blue Accent */
   --accent-color: #2c45ff;
-  /* Vibrant Royal Blue */
 
   --border-color: #e5e5e5;
   --card-hover: #f8f9fa;
+  --code-bg: #1e1e1e;
+  /* Darker for better code contrast */
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -27,21 +28,32 @@
 
   /* Spacing */
   --container-width: 760px;
-  /* Slightly wider for modern feel */
   --header-height: 90px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #0b0b0b;
-    /* Very dark grey, softer than black */
     --text-primary: #f1f1f1;
     --text-secondary: #a8a8a8;
     --text-tertiary: #666666;
     --accent-color: #5c7aff;
-    /* Lighter blue for dark mode */
     --border-color: #222222;
     --card-hover: #161616;
+    --code-bg: #111;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -52,40 +64,52 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Typography Scale */
+/* Reading Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent-color);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s;
+}
+
+/* Typography Scale & Editorial Feel */
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-sans);
-  font-weight: 700;
-  /* Bolder headers for flat design */
+  font-weight: 750;
   color: var(--text-primary);
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 a {
@@ -98,16 +122,18 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Link Styling within text for Flat Style */
+/* Links in Text */
 .post-content p a {
   color: var(--accent-color);
   font-weight: 500;
-  border-bottom: 2px solid rgba(44, 69, 255, 0.2);
-  /* Subtle underline */
+  background-image: linear-gradient(transparent 90%, rgba(44, 69, 255, 0.2) 90%);
+  background-size: 100% 85%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s;
 }
 
 .post-content p a:hover {
-  border-bottom-color: var(--accent-color);
+  background-size: 100% 100%;
 }
 
 /* Layout */
@@ -117,13 +143,11 @@ a:hover {
   padding: 0 1.5rem;
 }
 
-/* Header - Clean & Sharp */
+/* Header */
 header {
   height: var(--header-height);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid transparent;
-  /* Keep it open */
   margin-bottom: 4rem;
 }
 
@@ -136,7 +160,7 @@ header .container {
 
 .site-title {
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   letter-spacing: -0.04em;
   color: var(--text-primary);
 }
@@ -165,20 +189,18 @@ nav a.active::after {
   width: 100%;
   height: 2px;
   background-color: var(--accent-color);
-  /* Flat indicator */
 }
 
-/* Post List (Index) */
+/* Post List */
 .post-list {
   list-style: none;
 }
 
 .post-item {
   display: block;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--border-color);
-  /* Structured list */
-  transition: background-color 0.2s;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s;
 }
 
 .post-item:first-child {
@@ -186,10 +208,26 @@ nav a.active::after {
 }
 
 .post-item:hover {
-  /* Subtle interaction */
-  padding-left: 0.5rem;
-  /* Movement */
-  border-bottom-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+
+.post-item:hover .post-title {
+  color: var(--accent-color);
+  transition: color 0.2s;
+}
+
+/* Featured Post (First one) - Styled via CSS class added in template */
+.post-item.featured {
+  padding: 3rem 0;
+}
+
+.post-item.featured .post-title {
+  font-size: 2.2rem;
+}
+
+.post-item.featured .post-summary {
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .post-meta {
@@ -198,91 +236,147 @@ nav a.active::after {
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .post-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0 0 0.5rem 0;
 }
 
 .post-summary {
   color: var(--text-secondary);
   font-size: 1.05rem;
-  max-width: 90%;
+  max-width: 100%;
+  line-height: 1.6;
 }
 
 /* Single Post */
 .post-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 .post-header .post-title {
-  font-size: 3rem;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.post-header .post-meta {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 3.5rem;
+  /* Massive editorial title */
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .post-content {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
-  /* Larger comfortable type */
+  font-size: 1.2rem;
   color: var(--text-primary);
+}
+
+/* Drop Cap */
+.post-content>p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  margin-right: 0.6rem;
+  margin-top: 0.3rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: var(--font-sans);
 }
 
 .post-content blockquote {
   font-style: italic;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--text-primary);
   border-left: 4px solid var(--accent-color);
-  /* Bold flat accent */
-  padding-left: 1.5rem;
-  margin: 2.5rem 0;
-  background: transparent;
+  padding-left: 2rem;
+  margin: 3rem 0;
 }
 
+/* Enhanced Code Blocks (Mac Window Style) */
 .post-content pre {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--code-bg);
+  color: #f8f8f2;
+  border-radius: 8px;
   padding: 1.5rem;
-  border-radius: 4px;
-  overflow-x: auto;
-  font-size: 0.9rem;
+  /* Space for buttons */
+  position: relative;
+  margin: 2.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* Tags as Flat Badges */
+/* The header bar for code blocks */
+.post-content pre::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+.post-content pre code {
+  display: block;
+  margin-top: 20px;
+  /* Push code down */
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: transparent;
+  padding: 0;
+}
+
+/* Inline code */
+.post-content p code,
+.post-content li code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .post-content p code,
+  .post-content li code {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Tags */
 .tags {
-  margin-top: 4rem;
+  margin-top: 5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.8rem;
 }
 
 .tags .tag {
-  background-color: var(--border-color);
-  color: var(--text-primary);
-  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
   font-size: 0.85rem;
   border-radius: 4px;
-  /* Slightly rounded, not full pill */
   font-weight: 500;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .tags .tag:hover {
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: rgba(44, 69, 255, 0.05);
 }
 
 /* Footer */
 footer {
-  margin-top: 6rem;
+  margin-top: 8rem;
   padding: 4rem 0;
   border-top: 1px solid var(--border-color);
   color: var(--text-tertiary);
