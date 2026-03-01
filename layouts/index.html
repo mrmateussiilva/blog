@@ -1,7 +1,5 @@
 {{ define "main" }}
-<section class="intro">
-    <p>{{ .Site.Params.description }}</p>
-</section>
+<div class="intro">{{ .Site.Params.description }}</div>
 
 <div class="post-list-container">
     <ul class="post-list">
@@ -10,9 +8,7 @@
         <li class="post-item {{ if eq $index 0 }}featured{{ end }}">
             <div class="post-meta">{{ .Date.Format "02 . 01 . 2006" }}</div>
             <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <div class="post-summary">
-                {{ .Summary | truncate 240 }}
-            </div>
+            <div class="post-summary">{{ .Summary | truncate 240 }}</div>
         </li>
         {{ end }}
     </ul>

@@ -5,7 +5,7 @@
         {{ if eq .Type "posts" }}
         <div class="post-meta">
             <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "02 de Janeiro de 2006" }}</time>
-            {{ if .Params.categories }} | {{ range .Params.categories }}<a href="{{ " /categories/" | relURL }}{{ . |
+            {{ if .Params.categories }} · {{ range .Params.categories }}<a href="{{ " /categories/" | relURL }}{{ . |
                 urlize }}">{{ . }}</a> {{ end }}{{ end }}
         </div>
         {{ end }}
@@ -17,7 +17,6 @@
 
     {{ if .Params.tags }}
     <div class="tags">
-        Tags:
         {{ range .Params.tags }}
         <a href="{{ " /tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
         {{ end }}

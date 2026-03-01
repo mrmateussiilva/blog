@@ -1,6 +1,6 @@
 baseURL = 'https://exemplo.com/'
 languageCode = 'pt-br'
-title = 'Blog Minimalista'
+title = 'mrmateussiilva'
 theme = [] # Usando layouts locais
 
 [menus]
@@ -19,7 +19,7 @@ theme = [] # Usando layouts locais
 
 [params]
   description = "Um blog sobre tecnologia e simplicidade."
-  author = "Seu Nome"
+  author = "Mateus Silva"
   dateFormat = "02 Jan 2006"
 
 # URLs amigáveis
@@ -28,5 +28,5 @@ theme = [] # Usando layouts locais
 
 [markup]
   [markup.highlight]
-    style = 'tango'
+    style = 'dracula'
     noClasses = false

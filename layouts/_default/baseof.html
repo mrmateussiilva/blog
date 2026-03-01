@@ -3,6 +3,15 @@
 
 <head>
     {{ partial "head.html" . }}
+    <script>
+        // Aplicar tema ANTES de renderizar — evita flash
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -19,8 +28,29 @@
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             var scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
+            document.getElementById('progress-bar').style.width = scrolled + '%';
         };
+
+        // Theme Toggle
+        var btn = document.getElementById('theme-toggle');
+        var icon = document.getElementById('theme-icon');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Set icon based on current theme on load
+        (function () {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            icon.textContent = current === 'dark' ? '☀️' : '🌙';
+        })();
+
+        btn.addEventListener('click', function () {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
     </script>
 </body>
 

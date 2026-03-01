@@ -1,6 +1,10 @@
 <footer>
     <div class="container">
-        <div>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}</div>
-        <div style="opacity: 0.5;">Minimal Blog</div>
+        <div class="footer-brand">
+            <span class="accent">// </span>{{ .Site.Params.author }}<span class="accent"> —</span>
+        </div>
+        <div class="footer-copy">
+            &copy; {{ now.Format "2006" }} · {{ .Site.Title }}
+        </div>
     </div>
 </footer>
