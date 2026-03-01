@@ -1,4 +1,4 @@
-baseURL = 'https://mrmateussiilva.github.io/'
+baseURL = 'https://mrmateussiilva.github.io/blog/'
 languageCode = 'pt-br'
 title = 'mrmateussiilva'
 theme = [] # Usando layouts locais
