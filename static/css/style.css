@@ -33,7 +33,9 @@
   --font-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Fira Code', 'Consolas', monospace;
 
-  --container: 760px;
+  --page-width: 1080px;
+  --surface-width: 92ch;
+  --content-width: 75ch;
   --gap: 1.5rem;
 }
 
@@ -80,14 +82,14 @@ img {
    LAYOUT
    ============================================ */
 .container {
-  max-width: var(--container);
+  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 main.container {
-  padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding-top: 3.25rem;
+  padding-bottom: 5.25rem;
 }
 
 /* ============================================
@@ -279,6 +281,9 @@ nav a.active {
   background: var(--white);
   border: var(--border);
   box-shadow: var(--shadow-sm);
+  max-width: var(--surface-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro::before {
@@ -298,6 +303,12 @@ nav a.active {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.post-list-container {
+  max-width: var(--surface-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Post card */
@@ -376,13 +387,19 @@ nav a.active {
   background: var(--white);
   border: var(--border-thick);
   box-shadow: var(--shadow);
-  padding: 2.5rem 2.5rem 3rem;
+  padding: clamp(2rem, 2.4vw, 2.7rem) clamp(1.4rem, 2.8vw, 3rem) clamp(2.6rem, 3vw, 3.2rem);
+  max-width: var(--surface-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-header {
   border-bottom: var(--border);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   padding-bottom: 1.5rem;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-header .post-title {
@@ -398,19 +415,30 @@ nav a.active {
 
 /* Post content */
 .post-content {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 0.97rem + 0.22vw, 1.08rem);
   line-height: 1.75;
   color: var(--black);
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content p {
+  margin-bottom: 1.35rem;
 }
 
 .post-content h2 {
-  margin-top: 3rem;
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
   padding-bottom: 0.4rem;
   border-bottom: var(--border);
 }
 
 .post-content h3 {
-  margin-top: 2rem;
+  margin-top: 2.1rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.22;
 }
 
 /* Drop Cap */
@@ -541,6 +569,9 @@ nav a.active {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: var(--border);
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tags .tag {
@@ -847,6 +878,15 @@ footer .container {
     --shadow-hover: 2px 2px 0px #f0f0f0;
   }
 
+  .container {
+    padding: 0 1rem;
+  }
+
+  main.container {
+    padding-top: 1.75rem;
+    padding-bottom: 3.25rem;
+  }
+
   nav {
     display: none;
   }
@@ -880,6 +920,7 @@ footer .container {
 
   .post {
     padding: 1.5rem;
+    max-width: 100%;
   }
 
   .post-content>p:first-of-type::first-letter {
@@ -890,9 +931,29 @@ footer .container {
     padding: 1.25rem;
   }
 
+  .intro,
+  .post-list-container,
+  .post-header,
+  .post-content,
+  .tags {
+    max-width: 100%;
+  }
+
   footer .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    max-width: 940px;
+    padding: 0 1.25rem;
+  }
+
+  main.container {
+    padding-top: 2.6rem;
+    padding-bottom: 4.4rem;
   }
 }
 
