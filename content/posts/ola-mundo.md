@@ -28,6 +28,8 @@ Daqui para frente, você encontrará artigos sobre:
 
 Fique à vontade para explorar as páginas [Sobre](/sobre) e [Contato](/contato).
 
+_Atualização em 05/03/2026: ajuste leve para forçar novo deploy no GitHub Pages._
+
 ```go
 // Exemplo de código syntax highlight
 package main
