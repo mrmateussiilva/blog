@@ -1,20 +1,27 @@
-baseURL = 'https://mrmateussiilva.github.io/blog/'
+baseURL = "https://mrmateussiilva.github.io/blog/"
 languageCode = "pt-br"
 title = "~/log"
 theme = "paper"
 
 [params]
-  color = "linen"          # paleta suave, combina com minimalismo
-  twitter = ""             # pode deixar vazio
-  github = "seu-usuario"
-  monoDarkIcon = true
+  color = "linen"
+  author = "Mateus Silva"
+  description = "Engenharia, programação, filosofia e os marcos da minha vida."
+  github = "mrmateussiilva"
+  twitter = "mrmateusilva"
+  linkedin = "mrmateussiilva"
 
-[menu]
-  [[menu.main]]
-    name = "Sobre"
-    url = "/about/"
-    weight = 1
-  [[menu.main]]
-    name = "Checkpoints"
-    url = "/tags/checkpoint/"
-    weight = 2
+[[menu.main]]
+  name = "Sobre"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "Checkpoints"
+  url = "/tags/checkpoint/"
+  weight = 2
+
+[[menu.main]]
+  name = "Arquivo"
+  url = "/posts/"
+  weight = 3
