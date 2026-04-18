@@ -1,0 +1,20 @@
+baseURL = 'https://mrmateussiilva.github.io/blog'
+languageCode = "pt-br"
+title = "~/log"
+theme = "paper"
+
+[params]
+  color = "linen"          # paleta suave, combina com minimalismo
+  twitter = ""             # pode deixar vazio
+  github = "seu-usuario"
+  monoDarkIcon = true
+
+[menu]
+  [[menu.main]]
+    name = "Sobre"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Checkpoints"
+    url = "/tags/checkpoint/"
+    weight = 2
