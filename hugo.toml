@@ -1,4 +1,4 @@
-baseURL = 'https://mrmateussiilva.github.io/blog'
+baseURL = 'https://mrmateussiilva.github.io/blog/'
 languageCode = "pt-br"
 title = "~/log"
 theme = "paper"
