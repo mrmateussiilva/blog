@@ -1,5 +1,4 @@
 ---
-date : '2026-05-12T11:45:31-03:00'
 date: 2026-05-12
 title : 'Seja monossilábico'
 tags: ["filosofia", "vida", "deep-work"]
