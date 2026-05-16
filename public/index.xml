@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>~/log</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content on ~/log</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 15 May 2026 14:58:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sexta merda</title>
+      <link>http://localhost:1313/blog/2026/05/15/sexta-merda/</link>
+      <pubDate>Fri, 15 May 2026 14:58:05 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/05/15/sexta-merda/</guid>
+      <description>&lt;h1 id=&#34;que-dia-merda&#34;&gt;que dia merda&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://i.ytimg.com/vi/KULt8ELiofM/maxresdefault.jpg&#34; alt=&#34;Encher O Saco Significado   FDPLEARN&#34;&gt;&#xA;vamos lá&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seja monossilábico</title>
+      <link>http://localhost:1313/blog/2026/05/12/seja-monossil%C3%A1bico/</link>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/05/12/seja-monossil%C3%A1bico/</guid>
+      <description>&lt;h1 id=&#34;seja-monossilábico-sempre-que-possível&#34;&gt;Seja monossilábico sempre que possível&lt;/h1&gt;&#xA;&lt;p&gt;Existe uma arrogância escondida na comunicação moderna.&lt;/p&gt;&#xA;&lt;p&gt;A ideia de que tudo precisa ser explicado até a exaustão.&lt;/p&gt;&#xA;&lt;p&gt;Hoje ninguém apenas responde.&#xA;As pessoas performam.&lt;/p&gt;&#xA;&lt;p&gt;Toda frase precisa vir acompanhada de contexto, justificativa, opinião complementar, validação emocional e algum tipo de mini TED Talk improvisado.&lt;/p&gt;&#xA;&lt;p&gt;Conversas deixaram de ser troca de informação.&#xA;Viraram gerenciamento de percepção.&lt;/p&gt;&#xA;&lt;p&gt;Então comecei um experimento.&lt;/p&gt;&#xA;&lt;p&gt;Responder usando o menor número possível de palavras.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primeiros 10k</title>
+      <link>http://localhost:1313/blog/2026/05/08/primeiros-10k/</link>
+      <pubDate>Fri, 08 May 2026 06:53:27 -0300</pubDate>
+      <guid>http://localhost:1313/blog/2026/05/08/primeiros-10k/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hello, World — por que criei este blog</title>
+      <link>http://localhost:1313/blog/2026/04/17/hello-world-por-que-criei-este-blog/</link>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/04/17/hello-world-por-que-criei-este-blog/</guid>
+      <description>&lt;p&gt;Todo programa começa com um &lt;code&gt;Hello, World&lt;/code&gt;. Este blog não seria diferente.&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-que-escrever&#34;&gt;Por que escrever&lt;/h2&gt;&#xA;&lt;p&gt;Não é para audiência. É para mim.&lt;/p&gt;&#xA;&lt;p&gt;Existe algo que acontece quando você transforma pensamento em texto — ele fica mais nítido, mais honesto. Você descobre o que realmente entende e o que estava apenas simulando entender.&lt;/p&gt;&#xA;&lt;p&gt;Este blog é esse processo em público.&lt;/p&gt;&#xA;&lt;h2 id=&#34;o-que-vai-ter-aqui&#34;&gt;O que vai ter aqui&lt;/h2&gt;&#xA;&lt;p&gt;Engenharia, programação, matemática, filosofia — e os checkpoints da minha vida. Os momentos que, olhando para trás, vão definir quem eu me tornei.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sobre</title>
+      <link>http://localhost:1313/blog/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/about/</guid>
+      <description>&lt;p&gt;Sou Mateus Silva, engenheiro em formação com a cabeça cheia de perguntas.&lt;/p&gt;&#xA;&lt;p&gt;Este blog é onde processo o que estou aprendendo — engenharia, programação, matemática e filosofia. E onde registro os checkpoints da minha vida, os momentos que importam.&lt;/p&gt;&#xA;&lt;p&gt;Não escrevo para ter audiência. Escrevo para pensar melhor.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Se quiser trocar uma ideia:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/mrmateussiilva&#34;&gt;mrmateussiilva&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;LinkedIn: &lt;a href=&#34;https://www.linkedin.com/in/mrmateussiilva&#34;&gt;mrmateussiilva&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;X: &lt;a href=&#34;https://x.com/mrmateusilva&#34;&gt;@mrmateusilva&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

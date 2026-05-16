@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Checkpoint on ~/log</title>
+    <link>http://localhost:1313/blog/tags/checkpoint/</link>
+    <description>Recent content in Checkpoint on ~/log</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 17 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/checkpoint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello, World — por que criei este blog</title>
+      <link>http://localhost:1313/blog/2026/04/17/hello-world-por-que-criei-este-blog/</link>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/04/17/hello-world-por-que-criei-este-blog/</guid>
+      <description>&lt;p&gt;Todo programa começa com um &lt;code&gt;Hello, World&lt;/code&gt;. Este blog não seria diferente.&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-que-escrever&#34;&gt;Por que escrever&lt;/h2&gt;&#xA;&lt;p&gt;Não é para audiência. É para mim.&lt;/p&gt;&#xA;&lt;p&gt;Existe algo que acontece quando você transforma pensamento em texto — ele fica mais nítido, mais honesto. Você descobre o que realmente entende e o que estava apenas simulando entender.&lt;/p&gt;&#xA;&lt;p&gt;Este blog é esse processo em público.&lt;/p&gt;&#xA;&lt;h2 id=&#34;o-que-vai-ter-aqui&#34;&gt;O que vai ter aqui&lt;/h2&gt;&#xA;&lt;p&gt;Engenharia, programação, matemática, filosofia — e os checkpoints da minha vida. Os momentos que, olhando para trás, vão definir quem eu me tornei.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
