@@ -39,10 +39,6 @@ enableInlineShortcodes = true
     target = "content"
 
   [[module.mounts]]
-    source = "2026"
-    target = "content/posts/2026"
-
-  [[module.mounts]]
     source = "data"
     target = "data"
 
