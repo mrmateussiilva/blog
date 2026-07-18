@@ -2,6 +2,7 @@
 title: "Hello, World — por que criei este blog"
 date: 2026-04-17
 draft: false
+description: "O marco zero do blog: um espaço para pensar em público sobre engenharia, programação, filosofia e vida."
 tags: ["checkpoint", "vida"]
 ---
 

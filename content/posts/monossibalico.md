@@ -1,6 +1,7 @@
 ---
 date: 2026-05-12
 title : 'Seja monossilábico'
+description: "Um experimento sobre clareza, foco e economia de palavras nas conversas do dia a dia."
 tags: ["filosofia", "vida", "deep-work"]
 ---
 

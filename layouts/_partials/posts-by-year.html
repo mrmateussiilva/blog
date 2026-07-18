@@ -1,0 +1,33 @@
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+
+{{ range $posts.GroupByDate "2006" }}
+  <section>
+    <h2 class="hx:mb-5 hx:text-2xl hx:font-semibold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">{{ .Key }}</h2>
+    <div class="hx:space-y-8">
+      {{ range .Pages }}
+        <article class="hx:border-b hx:border-gray-200 hx:pb-8 hx:last:border-0 hx:dark:border-neutral-800">
+          <h3 class="hx:text-xl hx:font-semibold hx:tracking-tight hx:leading-7">
+            <a class="hx:text-slate-900 hx:no-underline hx:hover:text-primary-600 hx:dark:text-slate-100 hx:dark:hover:text-primary-500" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <div class="hx:mt-2 hx:flex hx:flex-wrap hx:items-center hx:gap-x-2 hx:gap-y-2 hx:text-sm hx:text-slate-500 hx:dark:text-slate-400">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "utils/format-date" .Date }}</time>
+            {{ with .Params.tags }}
+              <span class="hx:text-slate-300 hx:dark:text-neutral-700">/</span>
+              <div class="hx:flex hx:flex-wrap hx:gap-2">
+                {{ range . }}
+                  <span class="hx:rounded-sm hx:bg-gray-100 hx:px-1.5 hx:py-0.5 hx:text-xs hx:text-slate-600 hx:dark:bg-neutral-800 hx:dark:text-slate-300">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+          {{- $summary := .Description | default (.Summary | plainify | htmlUnescape) -}}
+          {{ with $summary }}
+            <p class="hx:mt-3 hx:leading-7 hx:text-slate-600 hx:dark:text-slate-400">{{ . | truncate 220 }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ else }}
+  <p class="hx:text-slate-600 hx:dark:text-slate-400">Nenhum post publicado ainda.</p>
+{{ end }}

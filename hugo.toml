@@ -1,12 +1,39 @@
 baseURL = "https://mrmateussiilva.github.io/blog/"
-languageCode = "pt-br"
+locale = "pt-BR"
 title = "~/log"
-theme = "paper"
+theme = "hextra"
+enableRobotsTXT = true
+enableGitInfo = true
+enableInlineShortcodes = true
+
+[outputs]
+  home = ["HTML", "RSS", "llms"]
+  page = ["HTML", "markdown"]
+  section = ["HTML", "RSS", "markdown"]
 
 [permalinks.page]
   posts = "/:year/:month/:day/:slug/"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["\\[", "\\]"], ["$$", "$$"]]
+          inline = [["\\(", "\\)"]]
+
 [module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+
   [[module.mounts]]
     source = "content"
     target = "content"
@@ -40,24 +67,82 @@ theme = "paper"
     target = "static"
 
 [params]
-  color = "linen"
-  author = "Mateus Silva"
   description = "Engenharia, programação, filosofia e os marcos da minha vida."
-  github = "mrmateussiilva"
-  twitter = "mrmateusilva"
-  linkedin = "mrmateussiilva"
+  dateFormat = "02 Jan 2006"
+  displayUpdatedDate = false
+  externalLinkDecoration = true
+
+  [params.author]
+    name = "Mateus Silva"
+
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+    width = "wide"
+
+  [params.theme]
+    default = "system"
+    displayToggle = true
+
+  [params.footer]
+    enable = true
+    displayCopyright = true
+    displayPoweredBy = true
+    width = "normal"
+
+  [params.search]
+    enable = true
+    type = "flexsearch"
+
+    [params.search.flexsearch]
+      index = "content"
+      tokenize = "forward"
+      js = "js/vendor/flexsearch.bundle.min.js"
+
+  [params.blog]
+    [params.blog.list]
+      displayTags = true
+      sortBy = "date"
+      sortOrder = "desc"
+      pagerSize = 10
+
+    [params.blog.article]
+      displayPagination = true
+
+  [params.archives]
+    section = "posts"
+    dateFormat = "02 Jan"
+
+  [params.toc]
+    displayTags = true
+
+  [params.highlight]
+    [params.highlight.copy]
+      enable = true
+      display = "hover"
+
+  [params.page]
+    width = "normal"
 
 [[menu.main]]
-  name = "Sobre"
-  url = "/about/"
+  name = "Posts"
+  pageRef = "/posts"
   weight = 1
 
 [[menu.main]]
-  name = "Checkpoints"
-  url = "/tags/checkpoint/"
+  name = "Sobre"
+  pageRef = "/about"
   weight = 2
 
 [[menu.main]]
-  name = "Arquivo"
-  url = "/posts/"
+  name = "Buscar"
   weight = 3
+  [menu.main.params]
+    type = "search"
+
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/mrmateussiilva"
+  weight = 4
+  [menu.main.params]
+    icon = "github"
