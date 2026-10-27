@@ -1,0 +1,39 @@
+.posts-archive {
+  display: grid;
+  row-gap: 3.5rem;
+}
+
+.posts-month-heading {
+  column-gap: 0.75rem;
+}
+
+.posts-month-count {
+  margin-left: auto;
+}
+
+.post-list-item {
+  padding-block: 1.5rem;
+}
+
+.post-list-item:first-child {
+  padding-top: 1.25rem;
+}
+
+.post-list-item:last-child {
+  padding-bottom: 0;
+  border-bottom-width: 0;
+}
+
+@media (max-width: 40rem) {
+  .posts-archive {
+    row-gap: 2.75rem;
+  }
+
+  .post-list-item {
+    padding-block: 1.25rem;
+  }
+
+  .post-list-item:first-child {
+    padding-top: 1rem;
+  }
+}
